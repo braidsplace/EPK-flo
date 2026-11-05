@@ -118,18 +118,6 @@ export function ScrollStory() {
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  const goToNextStage = () => {
-    const section = sectionRef.current;
-    if (!section || active >= contactStage) return;
-    const rect = section.getBoundingClientRect();
-    const travel = section.offsetHeight - window.innerHeight;
-    if (travel <= 0) return;
-    const next = active + 1;
-    const top = window.scrollY + rect.top + (next + 0.5) / stageCount * travel;
-    setActive(next);
-    window.scrollTo({ top, behavior: "instant" });
-  };
-
   return (
     <section className="scroll-story" id="accueil" ref={sectionRef} aria-labelledby="story-title">
       <h1 className="sr-only" id="story-title">BRAIDSPLACE — Live Hair Art</h1>
@@ -179,7 +167,7 @@ export function ScrollStory() {
             </motion.div>
           )}
         </AnimatePresence>
-        {active < contactStage && <button className="scroll-story-cue" type="button" onClick={goToNextStage} aria-label="Go to next page"><span>CLICK TO EXPLORE</span><span aria-hidden="true">→</span></button>}
+        {active < artistStage && <div className="scroll-story-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span>↓</span></div>}
       </div>
     </section>
   );
