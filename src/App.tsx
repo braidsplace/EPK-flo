@@ -75,11 +75,24 @@ function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
 
 function HomePage() {
   const reduceMotion = useReducedMotion();
+  const backgroundVideoRef = useRef<HTMLVideoElement>(null);
+  const [backgroundVideoPlaying, setBackgroundVideoPlaying] = useState(false);
+  const [backgroundVideoError, setBackgroundVideoError] = useState(false);
+  const toggleBackgroundVideo = () => {
+    const video = backgroundVideoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play().catch(() => setBackgroundVideoError(true));
+    } else {
+      video.pause();
+    }
+  };
   return <>
     <a className="skip-link" href="#artiste">Skip to content</a>
     <main id="contenu">
       <div className="home-immersive">
-        <div className="home-backdrop" aria-hidden="true"><video src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="metadata" tabIndex={-1} /></div>
+        <div className="home-backdrop" aria-hidden="true"><video ref={backgroundVideoRef} src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="auto" tabIndex={-1} onPlaying={() => { setBackgroundVideoPlaying(true); setBackgroundVideoError(false); }} onPause={() => setBackgroundVideoPlaying(false)} onError={() => setBackgroundVideoError(true)} /></div>
+        <button className="background-video-toggle" type="button" onClick={toggleBackgroundVideo} disabled={backgroundVideoError} aria-label={backgroundVideoError ? "Background video unavailable" : backgroundVideoPlaying ? "Pause background video" : "Play background video"}>{backgroundVideoError ? "Video unavailable" : backgroundVideoPlaying ? "Pause film" : "Play film"}</button>
         <ScrollStory />
       </div>
     </main>
