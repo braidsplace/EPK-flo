@@ -1,4 +1,4 @@
-import { useRef, useState, type PropsWithChildren } from "react";
+import { useEffect, useRef, useState, type PropsWithChildren } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ScrollStory } from "./ScrollStory";
 import { annexLinks } from "./ExploreMore";
@@ -78,12 +78,39 @@ function HomePage() {
   const backgroundVideoRef = useRef<HTMLVideoElement>(null);
   const [backgroundVideoPlaying, setBackgroundVideoPlaying] = useState(false);
   const [backgroundVideoError, setBackgroundVideoError] = useState(false);
+  const userPausedVideo = useRef(false);
+  useEffect(() => {
+    const video = backgroundVideoRef.current;
+    if (!video || reduceMotion) return;
+    const start = () => {
+      if (!userPausedVideo.current && video.paused) {
+        void video.play().catch(() => {
+          // Browsers may require a user gesture; the play control remains available.
+        });
+      }
+    };
+    start();
+    const resume = () => { if (!document.hidden) start(); };
+    document.addEventListener("visibilitychange", resume);
+    window.addEventListener("pageshow", start);
+    window.addEventListener("pointerdown", start, { once: true });
+    window.addEventListener("keydown", start, { once: true });
+    return () => {
+      document.removeEventListener("visibilitychange", resume);
+      window.removeEventListener("pageshow", start);
+      window.removeEventListener("pointerdown", start);
+      window.removeEventListener("keydown", start);
+    };
+  }, [reduceMotion]);
   const toggleBackgroundVideo = () => {
     const video = backgroundVideoRef.current;
     if (!video) return;
     if (video.paused) {
+      userPausedVideo.current = false;
+      setBackgroundVideoError(false);
       void video.play().catch(() => setBackgroundVideoError(true));
     } else {
+      userPausedVideo.current = true;
       video.pause();
     }
   };
@@ -95,7 +122,7 @@ function HomePage() {
         <ScrollStory />
       </div>
     </main>
-    <button className="background-video-toggle" type="button" onClick={toggleBackgroundVideo} disabled={backgroundVideoError} aria-label={backgroundVideoError ? "Background video unavailable" : backgroundVideoPlaying ? "Pause background video" : "Play background video"}>{backgroundVideoError ? "Video unavailable" : backgroundVideoPlaying ? "Pause film" : "Play film"}</button>
+    <button className="background-video-toggle" type="button" onClick={toggleBackgroundVideo} aria-label={backgroundVideoPlaying ? "Pause background video" : "Play background video"}>{backgroundVideoPlaying ? "Pause film" : backgroundVideoError ? "Retry film" : "Play film"}</button>
     <footer className="site-footer shell"><a className="brand" href="#accueil">BRAIDSPLACE</a><p>Live Hair Art · E-Press Kit</p><a href="#accueil">Back to top ↑</a></footer>
   </>;
 }
