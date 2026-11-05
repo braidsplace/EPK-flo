@@ -1358,9 +1358,10 @@ html:has(.scroll-story) {
 }
 .background-video-toggle {
   position: fixed;
-  right: clamp(16px, 3vw, 40px);
-  bottom: clamp(16px, 3vw, 40px);
-  z-index: 20;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: max(80px, calc(env(safe-area-inset-bottom, 0px) + 24px));
+  z-index: 1000;
+  min-height: 44px;
   padding: 10px 16px;
   border: 1px solid rgba(255, 245, 224, .7);
   border-radius: 999px;
@@ -1368,6 +1369,7 @@ html:has(.scroll-story) {
   color: #fff5e0;
   font: 600 13px/1.2 Manrope, sans-serif;
   cursor: pointer;
+  touch-action: manipulation;
 }
 .background-video-toggle:focus-visible { outline: 3px solid #fff5e0; outline-offset: 3px; }
 .background-video-toggle:disabled { cursor: default; opacity: .7; }

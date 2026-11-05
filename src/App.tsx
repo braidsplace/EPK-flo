@@ -92,10 +92,10 @@ function HomePage() {
     <main id="contenu">
       <div className="home-immersive">
         <div className="home-backdrop" aria-hidden="true"><video ref={backgroundVideoRef} src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="auto" tabIndex={-1} onPlaying={() => { setBackgroundVideoPlaying(true); setBackgroundVideoError(false); }} onPause={() => setBackgroundVideoPlaying(false)} onError={() => setBackgroundVideoError(true)} /></div>
-        <button className="background-video-toggle" type="button" onClick={toggleBackgroundVideo} disabled={backgroundVideoError} aria-label={backgroundVideoError ? "Background video unavailable" : backgroundVideoPlaying ? "Pause background video" : "Play background video"}>{backgroundVideoError ? "Video unavailable" : backgroundVideoPlaying ? "Pause film" : "Play film"}</button>
         <ScrollStory />
       </div>
     </main>
+    <button className="background-video-toggle" type="button" onClick={toggleBackgroundVideo} disabled={backgroundVideoError} aria-label={backgroundVideoError ? "Background video unavailable" : backgroundVideoPlaying ? "Pause background video" : "Play background video"}>{backgroundVideoError ? "Video unavailable" : backgroundVideoPlaying ? "Pause film" : "Play film"}</button>
     <footer className="site-footer shell"><a className="brand" href="#accueil">BRAIDSPLACE</a><p>Live Hair Art · E-Press Kit</p><a href="#accueil">Back to top ↑</a></footer>
   </>;
 }
