@@ -53,7 +53,8 @@ export function MinimalistHairArt({ immersive = false, pinned = false }: { immer
           className="minimalist-hair-portrait"
           src="/images/live-hair-art-portrait.webp"
           alt="Black-and-white portrait of a person with a sculptural hairstyle in front of a tilted white panel."
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           decoding="async"
           variants={{
             hidden: { opacity: 0, x: -70, scale: 0.94 },
