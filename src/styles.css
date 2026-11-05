@@ -1356,12 +1356,27 @@ html:has(.scroll-story) {
   background: linear-gradient(180deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .34) 55%, rgba(0, 0, 0, .58));
   pointer-events: none;
 }
+.background-video-toggle {
+  position: fixed;
+  right: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vw, 40px);
+  z-index: 20;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 245, 224, .7);
+  border-radius: 999px;
+  background: rgba(23, 19, 16, .7);
+  color: #fff5e0;
+  font: 600 13px/1.2 Manrope, sans-serif;
+  cursor: pointer;
+}
+.background-video-toggle:focus-visible { outline: 3px solid #fff5e0; outline-offset: 3px; }
+.background-video-toggle:disabled { cursor: default; opacity: .7; }
 .scroll-story {
   position: relative;
   z-index: 1;
-  /* Nine chapters, with 1.6 viewport heights of scroll per chapter. */
-  height: 1540vh;
-  height: 1540svh;
+  /* Nine chapters, with .8 viewport heights of scroll per chapter. */
+  height: 820vh;
+  height: 820svh;
 }
 .scroll-story-artist-anchor,
 .scroll-story-tour-anchor,
@@ -1373,20 +1388,20 @@ html:has(.scroll-story) {
   height: 1px;
 }
 .scroll-story-artist-anchor {
-  top: 880vh;
-  top: 880svh;
+  top: 440vh;
+  top: 440svh;
 }
 .scroll-story-tour-anchor {
-  top: 1040vh;
-  top: 1040svh;
+  top: 520vh;
+  top: 520svh;
 }
 .scroll-story-explore-anchor {
-  top: 1200vh;
-  top: 1200svh;
+  top: 600vh;
+  top: 600svh;
 }
 .scroll-story-contact-anchor {
-  top: 1360vh;
-  top: 1360svh;
+  top: 680vh;
+  top: 680svh;
 }
 .scroll-story-stage {
   position: sticky;
@@ -1809,6 +1824,5 @@ html:has(.scroll-story) {
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .home-backdrop video { display: none; }
   .explore-more-links a { transition: none; }
 }
