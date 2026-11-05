@@ -74,14 +74,15 @@ function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
 }
 
 function HomePage() {
-  const reduceMotion = useReducedMotion();
   const backgroundVideoRef = useRef<HTMLVideoElement>(null);
   const [backgroundVideoPlaying, setBackgroundVideoPlaying] = useState(false);
   const [backgroundVideoError, setBackgroundVideoError] = useState(false);
   const userPausedVideo = useRef(false);
   useEffect(() => {
     const video = backgroundVideoRef.current;
-    if (!video || reduceMotion) return;
+    if (!video) return;
+    video.muted = true;
+    video.defaultMuted = true;
     const start = () => {
       if (!userPausedVideo.current && video.paused) {
         void video.play().catch(() => {
@@ -93,15 +94,17 @@ function HomePage() {
     const resume = () => { if (!document.hidden) start(); };
     document.addEventListener("visibilitychange", resume);
     window.addEventListener("pageshow", start);
+    video.addEventListener("canplay", start);
     window.addEventListener("pointerdown", start, { once: true });
     window.addEventListener("keydown", start, { once: true });
     return () => {
       document.removeEventListener("visibilitychange", resume);
       window.removeEventListener("pageshow", start);
+      video.removeEventListener("canplay", start);
       window.removeEventListener("pointerdown", start);
       window.removeEventListener("keydown", start);
     };
-  }, [reduceMotion]);
+  }, []);
   const toggleBackgroundVideo = () => {
     const video = backgroundVideoRef.current;
     if (!video) return;
@@ -118,7 +121,7 @@ function HomePage() {
     <a className="skip-link" href="#artiste">Skip to content</a>
     <main id="contenu">
       <div className="home-immersive">
-        <div className="home-backdrop" aria-hidden="true"><video ref={backgroundVideoRef} src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay={!reduceMotion} muted loop playsInline preload="auto" tabIndex={-1} onPlaying={() => { setBackgroundVideoPlaying(true); setBackgroundVideoError(false); }} onPause={() => setBackgroundVideoPlaying(false)} onError={() => setBackgroundVideoError(true)} /></div>
+        <div className="home-backdrop" aria-hidden="true"><video ref={backgroundVideoRef} src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay muted loop playsInline preload="auto" tabIndex={-1} onPlaying={() => { setBackgroundVideoPlaying(true); setBackgroundVideoError(false); }} onPause={() => setBackgroundVideoPlaying(false)} onError={() => setBackgroundVideoError(true)} /></div>
         <ScrollStory />
       </div>
     </main>
