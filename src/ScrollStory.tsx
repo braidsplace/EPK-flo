@@ -61,22 +61,22 @@ export function ScrollStory() {
       const direction = Math.sign(delta);
       if (!direction) return;
       const now = performance.now();
-      if (event instanceof WheelEvent && now - lastInputAt > 160) {
+      if (event instanceof WheelEvent && now - lastInputAt > 100) {
         accumulated = 0;
         gestureUsed = false;
       }
       lastInputAt = now;
       if ((current === 0 && direction < 0) || (current === contactStage && direction > 0)) {
-        if (gestureUsed || now < blockedUntil) event.preventDefault();
+        if ((event instanceof TouchEvent && gestureUsed) || now < blockedUntil) event.preventDefault();
         return;
       }
       event.preventDefault();
-      if (gestureUsed || now < blockedUntil) return;
+      if ((event instanceof TouchEvent && gestureUsed) || now < blockedUntil) return;
       accumulated = Math.sign(accumulated) === direction ? accumulated + delta : delta;
-      if (Math.abs(accumulated) < 60) return;
+      if (Math.abs(accumulated) < 35) return;
       gestureUsed = true;
       accumulated = 0;
-      blockedUntil = now + (reduceMotion ? 120 : 650);
+      blockedUntil = now + (reduceMotion ? 80 : 400);
       const next = current + direction;
       const top = window.scrollY + rect.top + (next + 0.5) / stageCount * travel;
       window.scrollTo({ top, behavior: "instant" });
@@ -132,7 +132,7 @@ export function ScrollStory() {
       <div className="scroll-story-stage">
         <AnimatePresence mode="sync" initial={initialStage !== 0}>
           {active === 0 ? (
-            <motion.div className="video-hero-content scroll-story-content" key="cover" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.55, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="video-hero-content scroll-story-content" key="cover" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.38, ease: [0.22, 1, 0.36, 1] }}>
               <p className="video-hero-stamp">THIS IS</p>
               <p className="scroll-story-brand">BRAIDSPLACE</p>
               <p className="video-hero-manifesto">
@@ -144,7 +144,7 @@ export function ScrollStory() {
               <a className="video-hero-link" href="#artiste">LEARN MORE</a>
             </motion.div>
           ) : active === artistStage ? (
-            <motion.div className="scroll-story-chapter" key="artist" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.6, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="scroll-story-chapter" key="artist" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.42, ease: [0.22, 1, 0.36, 1] }}>
               <MinimalistHairArt immersive pinned />
             </motion.div>
           ) : active === tourStage ? (
