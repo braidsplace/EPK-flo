@@ -1499,7 +1499,7 @@ html:has(.scroll-story) {
 .scroll-story-message h2 {
   max-width: 1150px;
   margin: 0;
-  font: 400 clamp(32px, 5.5vw, 84px)/1.1 var(--display);
+  font: 400 clamp(30px, 4.5vw, 68px)/1.1 var(--display);
   font-variation-settings: 'YEAR' 1979;
   letter-spacing: .012em;
   text-wrap: balance;
@@ -1523,6 +1523,41 @@ html:has(.scroll-story) {
 .scroll-story-content ~ .scroll-story-cue {
   right: auto;
 }
+.scroll-story-arrows {
+  position: absolute;
+  z-index: 20;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px;
+  border: 1px solid rgba(255, 245, 224, .65);
+  border-radius: 999px;
+  background: rgba(23, 19, 16, .76);
+  color: #fff5e0;
+  font: 700 12px/1 var(--body);
+}
+.scroll-story-arrows button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font: 400 26px/1 var(--body);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.scroll-story-arrows button:hover:not(:disabled),
+.scroll-story-arrows button:focus-visible {
+  background: rgba(255, 245, 224, .22);
+}
+.scroll-story-arrows button:focus-visible { outline: 2px solid #fff5e0; outline-offset: 2px; }
+.scroll-story-arrows button:disabled { opacity: .38; cursor: default; }
+.scroll-story-arrows span { min-width: 42px; text-align: center; }
 .minimalist-hair--immersive {
   z-index: 1;
   min-height: 100svh;
@@ -1569,7 +1604,7 @@ html:has(.scroll-story) {
   box-shadow: 0 16px 50px rgba(0, 0, 0, .16);
 }
 .minimalist-hair--immersive .minimalist-hair-copy h2 {
-  font-size: clamp(30px, 3.6vw, 54px);
+  font-size: clamp(28px, 3.2vw, 46px);
 }
 .minimalist-hair--immersive .minimalist-hair-footer {
   color: #fff5e0;
@@ -1648,7 +1683,7 @@ html:has(.scroll-story) {
   font-size: clamp(9px, 1.5svh, 12px);
 }
 .journey--pinned .tour-heading h2 {
-  font-size: clamp(28px, min(7vw, 8svh), 88px);
+  font-size: clamp(28px, min(6vw, 7svh), 68px);
 }
 .journey--pinned .tour-layout {
   min-height: 0;
@@ -1748,7 +1783,7 @@ html:has(.scroll-story) {
 }
 .contact-finale-content h2 {
   margin: 0 0 clamp(16px, 3vh, 32px);
-  font: 400 clamp(48px, 9vw, 112px)/1.05 var(--display);
+  font: 400 clamp(42px, 7vw, 82px)/1.05 var(--display);
   font-variation-settings: 'YEAR' 1979;
   letter-spacing: .012em;
 }
