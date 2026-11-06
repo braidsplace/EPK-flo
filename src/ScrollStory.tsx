@@ -37,6 +37,16 @@ export function ScrollStory() {
   const [active, setActive] = useState(initialStage);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end end"] });
 
+  const goToStage = (next: number) => {
+    const section = sectionRef.current;
+    if (!section || next < 0 || next > contactStage) return;
+    const travel = section.offsetHeight - window.innerHeight;
+    if (travel <= 0) return;
+    const top = section.offsetTop + (next + 0.5) / stageCount * travel;
+    setActive(next);
+    window.scrollTo({ top, behavior: "instant" });
+  };
+
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     if (deepLinkPending.current) return;
     setActive(Math.max(0, Math.min(contactStage, Math.floor(progress * stageCount))));
@@ -168,6 +178,11 @@ export function ScrollStory() {
           )}
         </AnimatePresence>
         {active < artistStage && <div className="scroll-story-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span>↓</span></div>}
+        <nav className="scroll-story-arrows" aria-label="Navigate the E-Press Kit">
+          <button type="button" aria-label="Previous page" onClick={() => goToStage(active - 1)} disabled={active === 0}>←</button>
+          <span aria-live="polite" aria-atomic="true">{active + 1} / {stageCount}</span>
+          <button type="button" aria-label="Next page" onClick={() => goToStage(active + 1)} disabled={active === contactStage}>→</button>
+        </nav>
       </div>
     </section>
   );
