@@ -44,7 +44,10 @@ function GalleryPage() {
       <button type="button" aria-label="Previous photo" onClick={() => moveGallery(-1)} disabled={activePhoto === 0}>←</button>
       <button type="button" aria-label="Next photo" onClick={() => moveGallery(1)} disabled={activePhoto === photographs.length - 1}>→</button>
     </div><div className="photo-grid" ref={galleryRef} role="region" aria-label="Live Hair Art photographs" tabIndex={0} onScroll={updateActivePhoto}>
-      {photographs.map((photo) => <figure className="photo-card" key={photo.src}><img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" /></figure>)}
+      {photographs.map((photo) => <figure className="photo-card" key={photo.src}>
+        <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+        <a className="photo-card-instagram" href="https://www.instagram.com/braidsplace/" target="_blank" rel="noopener noreferrer" aria-label="Explore more BRAIDSPLACE creations on Instagram, opens in a new tab">MORE CREATIONS <span aria-hidden="true">↗</span></a>
+      </figure>)}
     </div></Reveal>
   </section>;
 }
