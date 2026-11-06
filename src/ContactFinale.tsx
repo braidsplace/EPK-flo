@@ -1,6 +1,9 @@
+import { useReducedMotion } from "motion/react";
+
 const instagramUrl = "https://www.instagram.com/braidsplace/";
 
 export function ContactFinale() {
+  const reduceMotion = useReducedMotion();
   return (
     <section className="contact-finale" aria-labelledby="contact-finale-title">
       <img
@@ -8,6 +11,18 @@ export function ContactFinale() {
         src="/videos/braidsplace-cover-poster.jpg"
         alt="Four models with sculptural braided hairstyles in the Live Hair Art film."
       />
+      {!reduceMotion && <video
+        className="contact-finale-video"
+        src="/videos/braidsplace-contact.mp4"
+        poster="/videos/braidsplace-cover-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        onLoadedMetadata={(event) => { event.currentTarget.playbackRate = 0.65; }}
+      />}
       <div className="contact-finale-content">
         <h2 id="contact-finale-title">CONTACT</h2>
         <p className="contact-finale-invitation">Let's create something alive together.</p>
