@@ -50,7 +50,7 @@ export function StatisticsRunway() {
             <div className="statistics-portrait-copy">
               <p className="statistics-portrait-eyebrow">BRAIDSPLACE / LIVE HAIR ART</p>
               <p className="statistics-portrait-label">{portrait.label}</p>
-              <p className={active === 2 ? "statistics-portrait-value statistics-portrait-value--places" : "statistics-portrait-value"}>{portrait.value}</p>
+              <p className={active === 2 ? "statistics-portrait-value statistics-portrait-value--places" : "statistics-portrait-value statistics-portrait-value--number"}>{portrait.value}</p>
               <p className="statistics-portrait-note">{portrait.note}</p>
             </div>
           </motion.article>
