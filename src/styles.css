@@ -493,6 +493,31 @@ h2 span {
   min-width: 0;
   scroll-snap-align: start;
 }
+.photo-card {
+  position: relative;
+}
+.photo-card-instagram {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1;
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 245, 224, .7);
+  border-radius: 999px;
+  background: rgba(23, 15, 12, .78);
+  color: #fff5e0;
+  font: 700 11px/1.2 var(--body);
+  letter-spacing: .08em;
+}
+.photo-card-instagram:hover,
+.photo-card-instagram:focus-visible {
+  background: #fff5e0;
+  color: #211913;
+}
+.photo-card-instagram:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
 .photo-card img {
   display: block;
   width: 100%;
@@ -1685,36 +1710,64 @@ html:has(.scroll-story) {
   z-index: -1;
   inset: 0;
   content: '';
-  background: rgba(17, 12, 8, .52);
+  background: rgba(17, 12, 8, .58);
+  pointer-events: none;
 }
-.contact-finale-image {
+.contact-finale-image,
+.contact-finale-video {
   position: absolute;
-  z-index: -2;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
+.contact-finale-image { z-index: -3; }
+.contact-finale-video { z-index: -2; }
 .contact-finale-content {
   width: min(100%, 1150px);
   text-align: center;
 }
 .contact-finale-content h2 {
-  margin: 0 0 clamp(26px, 5vh, 56px);
+  margin: 0 0 clamp(16px, 3vh, 32px);
   font: 400 clamp(48px, 9vw, 112px)/1.05 var(--display);
   font-variation-settings: 'YEAR' 1979;
   letter-spacing: .012em;
 }
+.contact-finale-invitation {
+  max-width: 680px;
+  margin: 0 auto clamp(24px, 5vh, 48px);
+  font: 400 clamp(25px, 4vw, 54px)/1.1 var(--editorial);
+  text-wrap: balance;
+}
+.contact-finale-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8em;
+  min-height: 50px;
+  padding: 13px 22px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font: 700 clamp(12px, 1.3vw, 16px)/1.2 var(--body);
+  letter-spacing: .11em;
+  text-decoration: none;
+  transition: background .2s ease, color .2s ease;
+}
+.contact-finale-cta:hover,
+.contact-finale-cta:focus-visible {
+  background: var(--film-ivory);
+  color: var(--brown);
+}
 .contact-finale-details {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  gap: clamp(15px, 2.5vh, 28px);
-  width: 100%;
-  font: 400 clamp(13px, 2.35vw, 26px)/1.3 var(--display);
-  font-variation-settings: 'YEAR' 1979;
-  letter-spacing: .012em;
+  justify-content: center;
+  gap: 12px clamp(14px, 2vw, 30px);
+  margin-top: clamp(26px, 5vh, 54px);
+  font: 700 clamp(11px, 1vw, 14px)/1.4 var(--body);
+  letter-spacing: .08em;
   overflow-wrap: anywhere;
 }
 .contact-finale-details a {
@@ -1725,9 +1778,17 @@ html:has(.scroll-story) {
 .contact-finale-details a:focus-visible {
   color: var(--gold);
 }
-.contact-finale-details a:focus-visible {
+.contact-finale-details a:focus-visible,
+.contact-finale-cta:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .contact-finale-details { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-finale-video { display: none; }
+  .contact-finale-cta { transition: none; }
 }
 .annex-screen {
   min-height: 100svh;
