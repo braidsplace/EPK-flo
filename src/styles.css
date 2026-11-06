@@ -792,7 +792,7 @@ h2 span {
 /* Trois tableaux sur une scène fixe, pilotés par les boutons de navigation. */
 .statistics-runway {
   background: #17120f;
-  color: var(--ivory);
+  color: #fff5e0;
 }
 .statistics-portraits-stage {
   position: relative;
@@ -835,31 +835,33 @@ h2 span {
 }
 .statistics-portrait-eyebrow {
   margin: 0 0 clamp(34px, 5vh, 70px);
-  color: var(--gold);
-  font: 700 clamp(11px, 1.2vw, 14px)/1.4 var(--body);
+  color: var(--highlight);
+  font: 700 clamp(11px, 1.1vw, 13px)/1.4 var(--body);
   letter-spacing: .18em;
 }
 .statistics-portrait-label {
   margin: 0 0 12px;
-  font: 700 clamp(18px, 2.4vw, 36px)/1.15 var(--body);
-  letter-spacing: .04em;
+  font: 400 clamp(23px, 2.6vw, 40px)/1.08 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .015em;
   text-transform: uppercase;
 }
 .statistics-portrait-value {
   margin: 0;
-  font: 400 clamp(86px, 13vw, 220px)/.94 var(--editorial);
-  letter-spacing: -.04em;
+  font: 400 clamp(68px, 9vw, 148px)/1 var(--editorial);
+  letter-spacing: -.025em;
 }
 .statistics-portrait-value--places {
   max-width: 12ch;
-  font-size: clamp(38px, 4.6vw, 78px);
-  line-height: 1.06;
-  letter-spacing: -.025em;
+  font-size: clamp(32px, 3.6vw, 58px);
+  line-height: 1.12;
+  letter-spacing: -.01em;
 }
 .statistics-portrait-note {
   max-width: 25ch;
   margin: clamp(24px, 4vh, 48px) 0 0;
-  font: 400 clamp(24px, 2.6vw, 44px)/1.15 var(--editorial);
+  font: 400 clamp(16px, 1.5vw, 21px)/1.55 var(--body);
+  color: #fff5e0;
 }
 .statistics-portraits-controls {
   position: absolute;
@@ -923,18 +925,18 @@ h2 span {
   }
   .statistics-portrait-label {
     margin-bottom: 4px;
-    font-size: clamp(16px, 4.6vw, 24px);
+    font-size: clamp(19px, 5.5vw, 28px);
   }
   .statistics-portrait-value {
-    font-size: clamp(72px, 21vw, 132px);
+    font-size: clamp(58px, 16vw, 96px);
   }
   .statistics-portrait-value--places {
     max-width: 18ch;
-    font-size: clamp(30px, 8vw, 50px);
+    font-size: clamp(26px, 6.5vw, 36px);
   }
   .statistics-portrait-note {
     margin-top: 12px;
-    font-size: clamp(20px, 5.5vw, 28px);
+    font-size: clamp(15px, 4vw, 18px);
   }
   .statistics-portraits-controls {
     right: 24px;
