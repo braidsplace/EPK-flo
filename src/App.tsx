@@ -44,7 +44,10 @@ function GalleryPage() {
       <button type="button" aria-label="Previous photo" onClick={() => moveGallery(-1)} disabled={activePhoto === 0}>←</button>
       <button type="button" aria-label="Next photo" onClick={() => moveGallery(1)} disabled={activePhoto === photographs.length - 1}>→</button>
     </div><div className="photo-grid" ref={galleryRef} role="region" aria-label="Live Hair Art photographs" tabIndex={0} onScroll={updateActivePhoto}>
-      {photographs.map((photo) => <figure className="photo-card" key={photo.src}><img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" /></figure>)}
+      {photographs.map((photo) => <figure className="photo-card" key={photo.src}>
+        <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+        <a className="photo-card-instagram" href="https://www.instagram.com/braidsplace/" target="_blank" rel="noopener noreferrer" aria-label="Explore more BRAIDSPLACE creations on Instagram, opens in a new tab">MORE CREATIONS <span aria-hidden="true">↗</span></a>
+      </figure>)}
     </div></Reveal>
   </section>;
 }
@@ -58,18 +61,18 @@ function AnnexHeader({ current }: { current: string }) {
 function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
   const reduceMotion = useReducedMotion();
   const label = annexLinks.find((annex) => annex.page === page)?.label ?? "BACKSTAGE";
-  return <motion.div className="annex-screen" initial={reduceMotion ? false : { opacity: 0, x: "-100vw" }} animate={{ opacity: 1, x: 0 }} transition={{ duration: reduceMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] }}>
+  return <motion.div className={page === "film" ? "annex-screen annex-screen--film" : "annex-screen"} initial={reduceMotion ? false : { opacity: 0, x: "-100vw" }} animate={{ opacity: 1, x: 0 }} transition={{ duration: reduceMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] }}>
     <a className="skip-link" href="#contenu">Skip to content</a>
     <AnnexHeader current={label} />
-    <main id="contenu" className="annex-page">
-      {page === "film" && <section className="annex-film shell" aria-labelledby="annex-film-title">
-        <p className="kicker">BRAIDSPLACE / BACKSTAGE</p><h1 id="annex-film-title">Live Hair Art</h1>
-        <video src="/videos/braidsplace-couleur.mp4" poster="/videos/braidsplace-couleur-poster.jpg" controls playsInline preload="metadata" aria-label="BRAIDSPLACE color film: hairstyles, models and artistic preparation" />
+    <main id="contenu" className={page === "film" ? "annex-page annex-page--film" : "annex-page"}>
+      {page === "film" && <section className="annex-film" aria-labelledby="annex-film-title">
+        <h1 className="sr-only" id="annex-film-title">Live Hair Art film</h1>
+        <video src="/videos/braidsplace-couleur.mp4" poster="/videos/braidsplace-couleur-poster.jpg" autoPlay={!reduceMotion} muted loop controls playsInline preload="metadata" aria-label="BRAIDSPLACE color film: hairstyles, models and artistic preparation" />
       </section>}
       {page === "galerie" && <><h1 className="sr-only">Gallery</h1><GalleryPage /></>}
       {page === "statistiques" && <><h1 className="sr-only">Statistics</h1><StatisticsRunway /></>}
     </main>
-    <footer className="site-footer shell"><a href="/#annexes">← Back to Explore More</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>
+    {page !== "film" && <footer className="site-footer shell"><a href="/#annexes">← Back to Explore More</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>}
   </motion.div>;
 }
 
