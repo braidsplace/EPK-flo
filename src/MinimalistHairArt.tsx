@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 /** Composition adaptée du « Minimalist Hero » de @ravikatiyar162 sur 21st.dev. */
 export function MinimalistHairArt({ immersive = false, pinned = false }: { immersive?: boolean; pinned?: boolean }) {
   const reduceMotion = useReducedMotion();
-  const transition = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
+  const transition = { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const };
 
   return (
     <motion.section
@@ -43,11 +43,11 @@ export function MinimalistHairArt({ immersive = false, pinned = false }: { immer
 
       <motion.div
         className="minimalist-hair-stage"
-        initial={reduceMotion || pinned ? false : "hidden"}
+        initial={reduceMotion ? false : "hidden"}
         animate={pinned ? "visible" : undefined}
         whileInView={reduceMotion || pinned ? undefined : "visible"}
         viewport={{ once: true, amount: 0.15 }}
-        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.18, delayChildren: 0.08 } } }}
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.08 } } }}
       >
         <motion.img
           className="minimalist-hair-portrait"
@@ -57,15 +57,15 @@ export function MinimalistHairArt({ immersive = false, pinned = false }: { immer
           fetchPriority="high"
           decoding="async"
           variants={{
-            hidden: { opacity: 0, x: -70, scale: 0.94 },
+            hidden: { opacity: 0, x: -28, scale: 0.985 },
             visible: { opacity: 1, x: 0, scale: 1, transition },
           }}
         />
         <motion.div
           className="minimalist-hair-copy"
           variants={{
-            hidden: { opacity: 0, x: -35 },
-            visible: { opacity: 1, x: 0, transition: { ...transition, duration: 0.75 } },
+            hidden: { opacity: 0, x: -18 },
+            visible: { opacity: 1, x: 0, transition },
           }}
         >
           <h2 id="minimalist-hair-title">THE ARTIST</h2>
