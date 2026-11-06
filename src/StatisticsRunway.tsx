@@ -37,7 +37,7 @@ export function StatisticsRunway() {
         <AnimatePresence mode="wait" initial={false}>
           <motion.article
             key={portrait.src}
-            className="statistics-portrait"
+            className={`statistics-portrait statistics-portrait--${active}`}
             initial={reduceMotion ? false : { opacity: 0, x: -48 }}
             animate={{ opacity: 1, x: 0 }}
             exit={reduceMotion ? undefined : { opacity: 0, x: 48 }}
