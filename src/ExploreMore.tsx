@@ -2,7 +2,6 @@ import { motion, useReducedMotion } from "motion/react";
 
 export const annexLinks = [
   { page: "film", href: "/?page=film", label: "BACKSTAGE" },
-  { page: "galerie", href: "/?page=galerie", label: "GALLERY" },
   { page: "statistiques", href: "/?page=statistiques", label: "STATISTICS" },
   { page: "portfolio", href: "/?page=portfolio", label: "PORTFOLIO" },
 ] as const;

@@ -1881,6 +1881,7 @@ html:has(.scroll-story) {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: saturate(.82) sepia(.08) contrast(1.05) brightness(.96);
 }
 @media (max-width: 700px) {
   .scroll-story-brand {

@@ -4,8 +4,8 @@ type Work = { title: string; details: string; images: string[] };
 type Category = { id: string; title: string; works: Work[] };
 
 // Text and media are transcribed from Flo's Squarespace portfolio, 7 November 2026.
-// Keep credits and project descriptions editable here. Publication rights for these
-// additional portfolio images are pending Flo's confirmation.
+// Keep credits and project descriptions editable here. Flo confirmed publication
+// rights for the additional images and people represented on 7 November 2026.
 const categories: Category[] = [
   { id: "film-television", title: "Film & television", works: [
     { title: "Les Rivières", details: "TV production · Hair stylist · Antenne Réunion Production · 21-day shoot · 2025", images: ["/portfolio/01.png", "/portfolio/02.png", "/portfolio/03.jpg", "/portfolio/04.png"] },

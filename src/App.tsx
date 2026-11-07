@@ -1,57 +1,9 @@
-import { useEffect, useRef, useState, type PropsWithChildren } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ScrollStory } from "./ScrollStory";
 import { annexLinks } from "./ExploreMore";
 import { StatisticsRunway } from "./StatisticsRunway";
 import { PortfolioPage } from "./PortfolioPage";
-
-function Reveal({ children, className = "" }: PropsWithChildren<{ className?: string }>) {
-  const reduceMotion = useReducedMotion();
-  return <motion.div className={className} initial={reduceMotion ? false : { opacity: 0 }} whileInView={reduceMotion ? undefined : { opacity: 1 }} viewport={{ once: true, amount: 0.12 }} transition={{ duration: 0.7 }}>{children}</motion.div>;
-}
-
-const photographs = [
-  { src: "/images/tableau-tresses-graphiques.webp", alt: "Model leaning against a railing, with braids sweeping in large curves in front of a light panel." },
-  { src: "/images/tableau-fleur.webp", alt: "Portrait of a model with a voluminous hairstyle, a pink flower and a brightly colored outfit." },
-  { src: "/images/tableau-portrait-nb-femme.webp", alt: "Black-and-white portrait of a model with a voluminous Afro hairstyle in front of a light panel." },
-  { src: "/images/tableau-portrait-nb-homme.webp", alt: "Black-and-white portrait of a model in a white shirt with a sculptural Afro hairstyle." },
-];
-
-function GalleryPage() {
-  const reduceMotion = useReducedMotion();
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const [activePhoto, setActivePhoto] = useState(0);
-  const moveGallery = (direction: -1 | 1) => {
-    const gallery = galleryRef.current;
-    if (!gallery) return;
-    const cards = gallery.querySelectorAll<HTMLElement>(".photo-card");
-    if (!cards.length) return;
-    const next = Math.max(0, Math.min(cards.length - 1, activePhoto + direction));
-    gallery.scrollTo({ left: cards[next].offsetLeft - cards[0].offsetLeft, behavior: reduceMotion ? "auto" : "smooth" });
-    setActivePhoto(next);
-  };
-  const updateActivePhoto = () => {
-    const gallery = galleryRef.current;
-    if (!gallery) return;
-    const cards = gallery.querySelectorAll<HTMLElement>(".photo-card");
-    if (cards.length < 2) return;
-    const step = cards[1].offsetLeft - cards[0].offsetLeft;
-    const atEnd = gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 2;
-    setActivePhoto(atEnd ? cards.length - 1 : Math.round(gallery.scrollLeft / step));
-  };
-  return <section className="visuals section-pad shell" id="images" aria-labelledby="visuals-title">
-    <Reveal className="section-heading"><h2 id="visuals-title">A concept:<br /><span>bringing things to life</span></h2><p className="kicker gallery-subtitle">GALLERY</p></Reveal>
-    <Reveal className="visual-note"><div className="gallery-controls" aria-label="Gallery controls">
-      <button type="button" aria-label="Previous photo" onClick={() => moveGallery(-1)} disabled={activePhoto === 0}>←</button>
-      <button type="button" aria-label="Next photo" onClick={() => moveGallery(1)} disabled={activePhoto === photographs.length - 1}>→</button>
-    </div><div className="photo-grid" ref={galleryRef} role="region" aria-label="Live Hair Art photographs" tabIndex={0} onScroll={updateActivePhoto}>
-      {photographs.map((photo) => <figure className="photo-card" key={photo.src}>
-        <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
-        <a className="photo-card-instagram" href="https://www.instagram.com/braidsplace/" target="_blank" rel="noopener noreferrer" aria-label="Explore more BRAIDSPLACE creations on Instagram, opens in a new tab">MORE CREATIONS <span aria-hidden="true">↗</span></a>
-      </figure>)}
-    </div></Reveal>
-  </section>;
-}
 
 function AnnexHeader({ current }: { current: string }) {
   return <header className="annex-header shell"><a className="brand" href="/#annexes">BRAIDSPLACE</a><nav aria-label="Explore the E-Press Kit">
@@ -59,7 +11,7 @@ function AnnexHeader({ current }: { current: string }) {
   </nav></header>;
 }
 
-function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" | "portfolio" }) {
+function AnnexPage({ page }: { page: "film" | "statistiques" | "portfolio" }) {
   const reduceMotion = useReducedMotion();
   const label = annexLinks.find((annex) => annex.page === page)?.label ?? "BACKSTAGE";
   return <motion.div className={page === "film" ? "annex-screen annex-screen--film" : "annex-screen"} initial={reduceMotion ? false : { opacity: 0, x: "-100vw" }} animate={{ opacity: 1, x: 0 }} transition={{ duration: reduceMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] }}>
@@ -70,7 +22,6 @@ function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" | "port
         <h1 className="sr-only" id="annex-film-title">Live Hair Art film</h1>
         <video src="/videos/braidsplace-couleur.mp4" poster="/videos/braidsplace-couleur-poster.jpg" autoPlay={!reduceMotion} muted loop controls playsInline preload="metadata" aria-label="BRAIDSPLACE color film: hairstyles, models and artistic preparation" />
       </section>}
-      {page === "galerie" && <><h1 className="sr-only">Gallery</h1><GalleryPage /></>}
       {page === "statistiques" && <><h1 className="sr-only">Statistics</h1><StatisticsRunway /></>}
       {page === "portfolio" && <PortfolioPage />}
     </main>
@@ -121,7 +72,7 @@ function HomePage() {
 
 function App() {
   const page = new URLSearchParams(window.location.search).get("page");
-  if (page === "film" || page === "galerie" || page === "statistiques" || page === "portfolio") return <AnnexPage page={page} />;
+  if (page === "film" || page === "statistiques" || page === "portfolio" || page === "galerie") return <AnnexPage page={page === "galerie" ? "portfolio" : page} />;
   return <HomePage />;
 }
 
