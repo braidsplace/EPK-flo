@@ -1669,6 +1669,7 @@ html:has(.scroll-story) {
   white-space: nowrap;
 }
 .explore-more {
+  position: relative;
   display: grid;
   place-items: center;
   align-content: center;
@@ -1677,6 +1678,40 @@ html:has(.scroll-story) {
   padding: clamp(28px, 6vw, 100px);
   background: rgba(17, 12, 8, .32);
   color: var(--film-ivory);
+}
+.explore-more-header {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 98px;
+  padding-inline: clamp(24px, 3.8vw, 64px);
+}
+.explore-more-brand {
+  font: 400 clamp(17px, 1.8vw, 24px)/1 var(--display);
+  font-variation-settings: "YEAR" 1979;
+  letter-spacing: .035em;
+}
+.explore-more-top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(14px, 2.3vw, 38px);
+}
+.explore-more-top-nav a {
+  font: 700 11px/1.4 var(--body);
+  letter-spacing: .13em;
+}
+.explore-more-top-nav a:hover { text-decoration: underline; text-underline-offset: .3em; }
+@media (max-width: 600px) {
+  .explore-more-header { display: block; min-height: 0; padding-block: 25px 16px; }
+  .explore-more-top-nav { justify-content: flex-start; margin-top: 18px; gap: 14px; }
+  .explore-more-top-nav a { font-size: 9px; }
 }
 .explore-more-title {
   width: min(100%, 840px);
