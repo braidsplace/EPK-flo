@@ -1481,6 +1481,25 @@ html:has(.scroll-story) {
   color: #fff5e0;
   font: 700 12px/1 var(--body);
 }
+.scroll-story-home {
+  position: absolute;
+  z-index: 20;
+  top: max(24px, env(safe-area-inset-top, 0px));
+  left: max(24px, env(safe-area-inset-left, 0px));
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 245, 224, .65);
+  border-radius: 999px;
+  background: rgba(23, 19, 16, .76);
+  color: #fff5e0;
+  font: 700 11px/1 var(--body);
+  letter-spacing: .13em;
+  cursor: pointer;
+}
+.scroll-story-home:hover,
+.scroll-story-home:focus-visible {
+  background: rgba(58, 41, 31, .95);
+}
+.scroll-story-home:focus-visible { outline: 2px solid #fff5e0; outline-offset: 2px; }
 .scroll-story-arrows button {
   display: grid;
   place-items: center;

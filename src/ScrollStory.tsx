@@ -176,6 +176,11 @@ export function ScrollStory() {
             </motion.div>
           )}
         </AnimatePresence>
+        {active > artistStage && (
+          <button className="scroll-story-home" type="button" onClick={() => goToStage(0)}>
+            HOME
+          </button>
+        )}
         <nav className="scroll-story-arrows" aria-label="Navigate the E-Press Kit">
           <button type="button" aria-label="Previous page" onClick={() => goToStage(active - 1)} disabled={active === 0}>←</button>
           <span aria-live="polite" aria-atomic="true">{active + 1} / {stageCount}</span>
