@@ -7,7 +7,7 @@ import { ContactFinale } from "./ContactFinale";
 
 const messages = [
   <>Welcome to <em>Flow’s artistic world.</em></>,
-  <>Living <em>tableaux.</em></>,
+  <>Hair <em>in motion.</em></>,
   <>A desire to pay tribute and <em>break conventions.</em></>,
   <><em>Live Canvas</em>, a project by BRAIDSPLACE.</>,
 ];
@@ -151,7 +151,6 @@ export function ScrollStory() {
                 <span><mark>A LIVING EXPERIENCE WHERE ART COMES TO LIFE.</mark></span>
                 <span>ART THAT IS NOT MERELY SEEN, BUT EXPERIENCED.</span>
               </p>
-              <a className="video-hero-link" href="#artiste">LEARN MORE</a>
             </motion.div>
           ) : active === artistStage ? (
             <motion.div className="scroll-story-chapter" key="artist" variants={reduceMotion ? still : slide} initial="enter" animate="center" exit="exit" transition={{ duration: reduceMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}>
@@ -177,7 +176,6 @@ export function ScrollStory() {
             </motion.div>
           )}
         </AnimatePresence>
-        {active < artistStage && <div className="scroll-story-cue" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span>↓</span></div>}
         <nav className="scroll-story-arrows" aria-label="Navigate the E-Press Kit">
           <button type="button" aria-label="Previous page" onClick={() => goToStage(active - 1)} disabled={active === 0}>←</button>
           <span aria-live="polite" aria-atomic="true">{active + 1} / {stageCount}</span>
