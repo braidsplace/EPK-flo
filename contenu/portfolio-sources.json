@@ -1,0 +1,476 @@
+[
+  {
+    "file": "/portfolio/cover.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/8f594f34-26c6-4288-a4f5-cd5f055d2191/image0.jpeg",
+    "note": "Cover photo bears Lan Shin Cédric credit in the image."
+  },
+  {
+    "file": "/portfolio/01.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/47a103b6-6f50-4211-9861-3a3229fcb153/Screenshot+2026-01-19+at+22.53.20.png",
+    "bytes": 267629,
+    "mime": "cached",
+    "path": "47a103b6-6f50-4211-9861-3a3229fcb153/Screenshot+2026-01-19+at+22.53.20.png"
+  },
+  {
+    "file": "/portfolio/02.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/a37c8efb-11d0-4417-80a2-e309e2ae7c44/Screenshot+2026-01-19+at+23.03.00.png",
+    "bytes": 260175,
+    "mime": "cached",
+    "path": "a37c8efb-11d0-4417-80a2-e309e2ae7c44/Screenshot+2026-01-19+at+23.03.00.png"
+  },
+  {
+    "file": "/portfolio/03.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/2756249a-c510-4643-95e4-25d533e80598/PHOTO-2025-10-13-04-53-50.jpg",
+    "bytes": 39114,
+    "mime": "cached",
+    "path": "2756249a-c510-4643-95e4-25d533e80598/PHOTO-2025-10-13-04-53-50.jpg"
+  },
+  {
+    "file": "/portfolio/04.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/3a578de1-b9b7-4151-b5d7-02785fa868d5/Screenshot+2026-01-19+at+23.18.24.png",
+    "bytes": 190145,
+    "mime": "cached",
+    "path": "3a578de1-b9b7-4151-b5d7-02785fa868d5/Screenshot+2026-01-19+at+23.18.24.png"
+  },
+  {
+    "file": "/portfolio/05.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/902d8094-bd91-45e2-aea0-768bb67432a8/Screenshot+2026-01-19+at+23.05.13.png",
+    "bytes": 224392,
+    "mime": "cached",
+    "path": "902d8094-bd91-45e2-aea0-768bb67432a8/Screenshot+2026-01-19+at+23.05.13.png"
+  },
+  {
+    "file": "/portfolio/06.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/c7ca002d-e8eb-4128-884f-b777acf37076/Screenshot+2026-01-19+at+23.29.42.png",
+    "bytes": 222397,
+    "mime": "cached",
+    "path": "c7ca002d-e8eb-4128-884f-b777acf37076/Screenshot+2026-01-19+at+23.29.42.png"
+  },
+  {
+    "file": "/portfolio/07.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/56a78343-edb2-4e9b-8fbe-4f0111237b6e/PHOTO-2025-10-13-04-53-52.jpg",
+    "bytes": 42951,
+    "mime": "cached",
+    "path": "56a78343-edb2-4e9b-8fbe-4f0111237b6e/PHOTO-2025-10-13-04-53-52.jpg"
+  },
+  {
+    "file": "/portfolio/08.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/b7ee7d6f-4d30-43f2-bb15-01c340fc5334/Screenshot+2026-01-19+at+23.11.41.png",
+    "bytes": 235260,
+    "mime": "cached",
+    "path": "b7ee7d6f-4d30-43f2-bb15-01c340fc5334/Screenshot+2026-01-19+at+23.11.41.png"
+  },
+  {
+    "file": "/portfolio/09.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/1e875018-3647-4f23-a83b-08ac8c6e9c35/Screenshot+2026-01-19+at+23.28.40.png",
+    "bytes": 188224,
+    "mime": "cached",
+    "path": "1e875018-3647-4f23-a83b-08ac8c6e9c35/Screenshot+2026-01-19+at+23.28.40.png"
+  },
+  {
+    "file": "/portfolio/10.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/241f47a8-d77c-46a2-ae16-732e98b76346/PHOTO-2025-10-13-04-53-51+3.jpg",
+    "bytes": 48028,
+    "mime": "cached",
+    "path": "241f47a8-d77c-46a2-ae16-732e98b76346/PHOTO-2025-10-13-04-53-51+3.jpg"
+  },
+  {
+    "file": "/portfolio/11.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/66be3e78-a881-4135-9ab3-6e4e818fdd07/Screenshot+2026-01-19+at+23.06.20.png",
+    "bytes": 277570,
+    "mime": "cached",
+    "path": "66be3e78-a881-4135-9ab3-6e4e818fdd07/Screenshot+2026-01-19+at+23.06.20.png"
+  },
+  {
+    "file": "/portfolio/12.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/17ced61b-26e7-4662-870a-b52bdf58f606/PHOTO-2025-10-13-04-53-51.jpg",
+    "bytes": 36895,
+    "mime": "cached",
+    "path": "17ced61b-26e7-4662-870a-b52bdf58f606/PHOTO-2025-10-13-04-53-51.jpg"
+  },
+  {
+    "file": "/portfolio/13.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/cb05bbee-1316-42ac-8915-e1451d6c2e1d/02C0D09A-5334-4D22-970E-384394D2BF34.JPG",
+    "bytes": 134539,
+    "mime": "cached",
+    "path": "cb05bbee-1316-42ac-8915-e1451d6c2e1d/02C0D09A-5334-4D22-970E-384394D2BF34.JPG"
+  },
+  {
+    "file": "/portfolio/14.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/f6507a7a-1d5c-4ffe-892a-3c9607db1c17/3925E92C-F555-423E-9B0C-7089A742DD04.JPG",
+    "bytes": 87268,
+    "mime": "cached",
+    "path": "f6507a7a-1d5c-4ffe-892a-3c9607db1c17/3925E92C-F555-423E-9B0C-7089A742DD04.JPG"
+  },
+  {
+    "file": "/portfolio/15.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/05bac4e6-43bf-434e-af0f-fc5b9fcc7883/Screenshot+2026-01-19+at+19.09.29.png",
+    "bytes": 240950,
+    "mime": "cached",
+    "path": "05bac4e6-43bf-434e-af0f-fc5b9fcc7883/Screenshot+2026-01-19+at+19.09.29.png"
+  },
+  {
+    "file": "/portfolio/16.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/404df31c-a968-4ec0-b219-98293a8b92d7/Screenshot+2026-01-19+at+19.14.33.png",
+    "bytes": 223795,
+    "mime": "cached",
+    "path": "404df31c-a968-4ec0-b219-98293a8b92d7/Screenshot+2026-01-19+at+19.14.33.png"
+  },
+  {
+    "file": "/portfolio/17.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/ed5cc2e9-696a-4411-ac98-8bc6b2294b4d/Screenshot+2026-01-19+at+19.13.16.png",
+    "bytes": 302948,
+    "mime": "cached",
+    "path": "ed5cc2e9-696a-4411-ac98-8bc6b2294b4d/Screenshot+2026-01-19+at+19.13.16.png"
+  },
+  {
+    "file": "/portfolio/18.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/8ed6358a-af99-4ffb-a45d-3a37de2e7e2d/Screenshot+2026-01-19+at+19.02.33.png",
+    "bytes": 626019,
+    "mime": "cached",
+    "path": "8ed6358a-af99-4ffb-a45d-3a37de2e7e2d/Screenshot+2026-01-19+at+19.02.33.png"
+  },
+  {
+    "file": "/portfolio/19.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/e887a31a-297e-484a-a914-411555e8adb4/Screenshot+2026-01-19+at+18.53.03.png",
+    "bytes": 539999,
+    "mime": "cached",
+    "path": "e887a31a-297e-484a-a914-411555e8adb4/Screenshot+2026-01-19+at+18.53.03.png"
+  },
+  {
+    "file": "/portfolio/20.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/33807ee3-3f5e-44c6-80d9-10f6f091b560/Screenshot+2026-01-19+at+18.51.09.png",
+    "bytes": 605638,
+    "mime": "cached",
+    "path": "33807ee3-3f5e-44c6-80d9-10f6f091b560/Screenshot+2026-01-19+at+18.51.09.png"
+  },
+  {
+    "file": "/portfolio/21.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/789d32d6-46e0-4f47-955f-98d2374ba05d/Screenshot+2026-01-19+at+18.50.55.png",
+    "bytes": 623520,
+    "mime": "cached",
+    "path": "789d32d6-46e0-4f47-955f-98d2374ba05d/Screenshot+2026-01-19+at+18.50.55.png"
+  },
+  {
+    "file": "/portfolio/22.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/decba9da-1455-4567-8ef3-4d6aa2d59bd5/IMG_9184.jpg",
+    "bytes": 179752,
+    "mime": "cached",
+    "path": "decba9da-1455-4567-8ef3-4d6aa2d59bd5/IMG_9184.jpg"
+  },
+  {
+    "file": "/portfolio/23.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/6030711a-b1aa-43b5-a3dc-df76c72ae267/IMG_9335+2.jpg",
+    "bytes": 101872,
+    "mime": "cached",
+    "path": "6030711a-b1aa-43b5-a3dc-df76c72ae267/IMG_9335+2.jpg"
+  },
+  {
+    "file": "/portfolio/24.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/929242b3-83fb-4d1b-bcf0-12d5a56cbfd8/IMG_9180.jpg",
+    "bytes": 134702,
+    "mime": "cached",
+    "path": "929242b3-83fb-4d1b-bcf0-12d5a56cbfd8/IMG_9180.jpg"
+  },
+  {
+    "file": "/portfolio/25.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/204f1b0a-71d9-4484-8d9f-44b96f2ab557/IMG_9237.png",
+    "bytes": 493508,
+    "mime": "cached",
+    "path": "204f1b0a-71d9-4484-8d9f-44b96f2ab557/IMG_9237.png"
+  },
+  {
+    "file": "/portfolio/26.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/de3c7dc0-574c-4fab-a647-4de0a16a1f55/WhatsApp+Image+2025-09-19+at+12.24.57.jpeg",
+    "bytes": 102839,
+    "mime": "cached",
+    "path": "de3c7dc0-574c-4fab-a647-4de0a16a1f55/WhatsApp+Image+2025-09-19+at+12.24.57.jpeg"
+  },
+  {
+    "file": "/portfolio/27.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/e9e9d813-c844-42be-b505-b3d2872ed0f4/lauryn+hill.jpg",
+    "bytes": 82964,
+    "mime": "cached",
+    "path": "e9e9d813-c844-42be-b505-b3d2872ed0f4/lauryn+hill.jpg"
+  },
+  {
+    "file": "/portfolio/28.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/f8a15e30-7589-4092-971e-81b441ec5f32/LH1.jpg",
+    "bytes": 285619,
+    "mime": "cached",
+    "path": "f8a15e30-7589-4092-971e-81b441ec5f32/LH1.jpg"
+  },
+  {
+    "file": "/portfolio/29.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/e1d4456a-2526-4663-9462-4d857c02e2cd/IMG_4093.JPG",
+    "bytes": 216768,
+    "mime": "cached",
+    "path": "e1d4456a-2526-4663-9462-4d857c02e2cd/IMG_4093.JPG"
+  },
+  {
+    "file": "/portfolio/30.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/a45bef80-5076-4717-97f6-c24ad8cbcd2a/preious+.JPG",
+    "bytes": 74317,
+    "mime": "cached",
+    "path": "a45bef80-5076-4717-97f6-c24ad8cbcd2a/preious+.JPG"
+  },
+  {
+    "file": "/portfolio/31.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/864591ec-84c4-40e0-8f0d-08031c9b934c/BOEUF+3.jpg",
+    "bytes": 209559,
+    "mime": "cached",
+    "path": "864591ec-84c4-40e0-8f0d-08031c9b934c/BOEUF+3.jpg"
+  },
+  {
+    "file": "/portfolio/32.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/9d430c8a-5f14-4eeb-905f-8767ed11ca5b/YOWANN.jpg",
+    "bytes": 185100,
+    "mime": "cached",
+    "path": "9d430c8a-5f14-4eeb-905f-8767ed11ca5b/YOWANN.jpg"
+  },
+  {
+    "file": "/portfolio/33.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/708d556b-e132-4150-9e21-08570f86ca2f/MA+COIFFURE+AVC+FLEURS.jpg",
+    "bytes": 246139,
+    "mime": "cached",
+    "path": "708d556b-e132-4150-9e21-08570f86ca2f/MA+COIFFURE+AVC+FLEURS.jpg"
+  },
+  {
+    "file": "/portfolio/34.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/a54f0c0e-d0d6-4def-b549-dcab7a174224/FLEURS+2.jpg",
+    "bytes": 191672,
+    "mime": "cached",
+    "path": "a54f0c0e-d0d6-4def-b549-dcab7a174224/FLEURS+2.jpg"
+  },
+  {
+    "file": "/portfolio/35.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/9dc2d3a5-fa73-449f-97aa-73340dcc6204/IMG_1292.JPG",
+    "bytes": 237575,
+    "mime": "cached",
+    "path": "9dc2d3a5-fa73-449f-97aa-73340dcc6204/IMG_1292.JPG"
+  },
+  {
+    "file": "/portfolio/36.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/9814b7b0-3c00-4e3c-9e83-17a17e7ed6d0/IMG_1300.JPG",
+    "bytes": 241065,
+    "mime": "cached",
+    "path": "9814b7b0-3c00-4e3c-9e83-17a17e7ed6d0/IMG_1300.JPG"
+  },
+  {
+    "file": "/portfolio/37.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/3ea9945b-3397-4d82-bafd-afe873f3d188/IMG_5684.jpeg",
+    "bytes": 112274,
+    "mime": "cached",
+    "path": "3ea9945b-3397-4d82-bafd-afe873f3d188/IMG_5684.jpeg"
+  },
+  {
+    "file": "/portfolio/38.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/5e7207f8-d21b-4221-83f6-e7170ac0ca9b/image11.jpeg",
+    "bytes": 177181,
+    "mime": "cached",
+    "path": "5e7207f8-d21b-4221-83f6-e7170ac0ca9b/image11.jpeg"
+  },
+  {
+    "file": "/portfolio/39.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/ff22b4e7-d41b-4052-844e-1dfe49d2f418/P1154433.jpg",
+    "bytes": 173405,
+    "mime": "cached",
+    "path": "ff22b4e7-d41b-4052-844e-1dfe49d2f418/P1154433.jpg"
+  },
+  {
+    "file": "/portfolio/40.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/03c77ce7-0cda-46a0-9fe7-ac33e0bedad3/P1154063.jpg",
+    "bytes": 193088,
+    "mime": "cached",
+    "path": "03c77ce7-0cda-46a0-9fe7-ac33e0bedad3/P1154063.jpg"
+  },
+  {
+    "file": "/portfolio/41.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/ace56d77-4763-46b8-a2be-8960baa49dfa/_JME0010.jpg",
+    "bytes": 258855,
+    "mime": "cached",
+    "path": "ace56d77-4763-46b8-a2be-8960baa49dfa/_JME0010.jpg"
+  },
+  {
+    "file": "/portfolio/42.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/a07bab5e-4d39-46e9-a685-5f7a91325e3d/_JME0126.jpg",
+    "bytes": 183171,
+    "mime": "image/jpeg",
+    "path": "a07bab5e-4d39-46e9-a685-5f7a91325e3d/_JME0126.jpg"
+  },
+  {
+    "file": "/portfolio/43.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/e7d4517a-c6ac-4840-a3de-a94354826fb0/IMG_2451.jpg",
+    "bytes": 133777,
+    "mime": "image/jpeg",
+    "path": "e7d4517a-c6ac-4840-a3de-a94354826fb0/IMG_2451.jpg"
+  },
+  {
+    "file": "/portfolio/44.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/42ecebc3-01a3-48e7-bdf3-32f648e87b2e/IMG_2412.jpg",
+    "bytes": 247906,
+    "mime": "cached",
+    "path": "42ecebc3-01a3-48e7-bdf3-32f648e87b2e/IMG_2412.jpg"
+  },
+  {
+    "file": "/portfolio/45.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/da6d2d99-504b-4e47-a0c0-f5b6008781e5/P_DV1101.jpg",
+    "bytes": 121475,
+    "mime": "image/jpeg",
+    "path": "da6d2d99-504b-4e47-a0c0-f5b6008781e5/P_DV1101.jpg"
+  },
+  {
+    "file": "/portfolio/46.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/7033a9e3-af6c-4d5e-830c-fcc00b3adc32/WhatsApp+Image+2025-11-02+at+19.05.39.jpeg",
+    "bytes": 45793,
+    "mime": "cached",
+    "path": "7033a9e3-af6c-4d5e-830c-fcc00b3adc32/WhatsApp+Image+2025-11-02+at+19.05.39.jpeg"
+  },
+  {
+    "file": "/portfolio/47.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/a2597313-0f85-4f36-b348-edde933470a1/WhatsApp+Image+2025-11-02+at+19.05.38.jpeg",
+    "bytes": 96687,
+    "mime": "cached",
+    "path": "a2597313-0f85-4f36-b348-edde933470a1/WhatsApp+Image+2025-11-02+at+19.05.38.jpeg"
+  },
+  {
+    "file": "/portfolio/48.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/d9593ac2-a057-44f0-bbe7-e065fdc39d96/IMG_5304.JPG",
+    "bytes": 203636,
+    "mime": "cached",
+    "path": "d9593ac2-a057-44f0-bbe7-e065fdc39d96/IMG_5304.JPG"
+  },
+  {
+    "file": "/portfolio/49.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/97981d67-6ac3-473f-9d33-d22fa0d94bb0/54BBC9A6-C894-444B-B4AD-5ECC61652CE3.JPG",
+    "bytes": 185692,
+    "mime": "cached",
+    "path": "97981d67-6ac3-473f-9d33-d22fa0d94bb0/54BBC9A6-C894-444B-B4AD-5ECC61652CE3.JPG"
+  },
+  {
+    "file": "/portfolio/50.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/2c058b2b-a282-45c4-ba2e-44de8738ebe5/IMG_3557-V2.jpg",
+    "bytes": 345507,
+    "mime": "cached",
+    "path": "2c058b2b-a282-45c4-ba2e-44de8738ebe5/IMG_3557-V2.jpg"
+  },
+  {
+    "file": "/portfolio/51.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/1ac7bb20-defd-463d-8a36-316c1f099f91/IMG_1201.jpg",
+    "bytes": 232675,
+    "mime": "image/jpeg",
+    "path": "1ac7bb20-defd-463d-8a36-316c1f099f91/IMG_1201.jpg"
+  },
+  {
+    "file": "/portfolio/52.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/53ba6007-cae1-4e77-ab73-76409740b4fe/IMG_7870.JPEG",
+    "bytes": 204219,
+    "mime": "cached",
+    "path": "53ba6007-cae1-4e77-ab73-76409740b4fe/IMG_7870.JPEG"
+  },
+  {
+    "file": "/portfolio/53.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/b4308ff0-8c9d-49da-ad06-d43381bbe95d/IMG_7869.JPEG",
+    "bytes": 288388,
+    "mime": "cached",
+    "path": "b4308ff0-8c9d-49da-ad06-d43381bbe95d/IMG_7869.JPEG"
+  },
+  {
+    "file": "/portfolio/54.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/c28b9f7d-a847-4997-b0a8-88cda075fbc8/IMG_3092.JPEG",
+    "bytes": 161275,
+    "mime": "cached",
+    "path": "c28b9f7d-a847-4997-b0a8-88cda075fbc8/IMG_3092.JPEG"
+  },
+  {
+    "file": "/portfolio/55.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/5cf82e4f-4dfa-468d-afef-c6c205ec4ce0/IMG_7821.jpg",
+    "bytes": 164023,
+    "mime": "cached",
+    "path": "5cf82e4f-4dfa-468d-afef-c6c205ec4ce0/IMG_7821.jpg"
+  },
+  {
+    "file": "/portfolio/56.png",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/11a2f193-a3b1-4926-8c0f-1ea39289d1b1/IMG_4369.PNG",
+    "bytes": 467830,
+    "mime": "cached",
+    "path": "11a2f193-a3b1-4926-8c0f-1ea39289d1b1/IMG_4369.PNG"
+  },
+  {
+    "file": "/portfolio/57.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/24a03a25-5700-4f65-b053-c16599ed304e/IMG_3194.jpg",
+    "bytes": 119835,
+    "mime": "cached",
+    "path": "24a03a25-5700-4f65-b053-c16599ed304e/IMG_3194.jpg"
+  },
+  {
+    "file": "/portfolio/58.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/29f4e2f8-9213-4d99-bd05-d113ee07a3b2/image13.jpeg",
+    "bytes": 111881,
+    "mime": "cached",
+    "path": "29f4e2f8-9213-4d99-bd05-d113ee07a3b2/image13.jpeg"
+  },
+  {
+    "file": "/portfolio/59.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/6563e870-b52e-4665-8119-7c570f796c99/IMG_3199.jpeg",
+    "bytes": 117653,
+    "mime": "cached",
+    "path": "6563e870-b52e-4665-8119-7c570f796c99/IMG_3199.jpeg"
+  },
+  {
+    "file": "/portfolio/60.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/0c7efe01-d2ec-4e2f-8077-6675bfd0afa4/P1125264.jpg",
+    "bytes": 313046,
+    "mime": "cached",
+    "path": "0c7efe01-d2ec-4e2f-8077-6675bfd0afa4/P1125264.jpg"
+  },
+  {
+    "file": "/portfolio/61.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/e37c4b35-58c8-485e-8d2a-4a63da5c39b9/P1125266.jpg",
+    "bytes": 313473,
+    "mime": "cached",
+    "path": "e37c4b35-58c8-485e-8d2a-4a63da5c39b9/P1125266.jpg"
+  },
+  {
+    "file": "/portfolio/62.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/642e57a5-10c1-49d4-b5c6-84034c3b9556/image2.jpeg",
+    "bytes": 393853,
+    "mime": "cached",
+    "path": "642e57a5-10c1-49d4-b5c6-84034c3b9556/image2.jpeg"
+  },
+  {
+    "file": "/portfolio/63.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/6870c57a-fbb1-4ffe-89a3-5a34505f603a/image1.jpeg",
+    "bytes": 310116,
+    "mime": "image/jpeg",
+    "path": "6870c57a-fbb1-4ffe-89a3-5a34505f603a/image1.jpeg"
+  },
+  {
+    "file": "/portfolio/64.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/f2426fb0-422e-41d4-8640-f7716ed297c5/image7.jpeg",
+    "bytes": 109181,
+    "mime": "image/jpeg",
+    "path": "f2426fb0-422e-41d4-8640-f7716ed297c5/image7.jpeg"
+  },
+  {
+    "file": "/portfolio/65.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/fd6c6409-ca3e-4dc6-a2bd-f7874f1fada5/image9.jpeg",
+    "bytes": 117769,
+    "mime": "cached",
+    "path": "fd6c6409-ca3e-4dc6-a2bd-f7874f1fada5/image9.jpeg"
+  },
+  {
+    "file": "/portfolio/66.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/9cf0409e-faa9-41a1-bfa7-9780b360e554/IMG_1416.JPG",
+    "bytes": 117316,
+    "mime": "cached",
+    "path": "9cf0409e-faa9-41a1-bfa7-9780b360e554/IMG_1416.JPG"
+  },
+  {
+    "file": "/portfolio/67.jpg",
+    "source": "https://images.squarespace-cdn.com/content/v1/659554033dfc1d2f081c2e8c/22184487-7576-4ae8-8223-5d906fb7f3eb/image16.jpeg",
+    "bytes": 294652,
+    "mime": "cached",
+    "path": "22184487-7576-4ae8-8223-5d906fb7f3eb/image16.jpeg"
+  }
+]
