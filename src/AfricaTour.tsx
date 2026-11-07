@@ -44,7 +44,7 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
             >
               <title id="tour-map-title">BRAIDSPLACE tour route across Africa</title>
               <desc id="tour-map-description">
-                A dotted route connects Réunion Island, Cape Town at the International Jazz Festival, Johannesburg and Tanzania on a map of Africa.
+                A continuous route connects Réunion Island, Cape Town at the International Jazz Festival, Johannesburg and Tanzania on a map of Africa.
               </desc>
               <defs>
                 <path id="reunion-coastline" d={reunionOutline} />
@@ -55,8 +55,18 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
                 href="#reunion-coastline"
                 transform="translate(661.5 561.3) scale(.1)"
               />
-              <path className="tour-route-dots" d={route} />
-              <g>
+              <motion.path
+                className="tour-route-line"
+                d={route}
+                initial={reduceMotion ? false : { pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: reduceMotion ? 0 : 2.8, delay: reduceMotion ? 0 : 0.25, ease: "easeInOut" }}
+              />
+              <motion.g
+                initial={reduceMotion ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 }}
+              >
                 <line className="tour-map-leader" x1={origin.x} y1={origin.y} x2={origin.x} y2="650" />
                 <circle className="tour-map-origin-ring" cx={origin.x} cy={origin.y} r="15" />
                 <rect className="tour-map-label-panel" x="480" y="650" width="200" height="58" rx="4" />
@@ -66,9 +76,14 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
                   transform="translate(490 663) scale(.5)"
                 />
                 <text className="tour-map-label-place tour-map-origin-place" x="548" y="684">{origin.place}</text>
-              </g>
-              {destinations.map((destination) => (
-                <g key={destination.place}>
+              </motion.g>
+              {destinations.map((destination, index) => (
+                <motion.g
+                  key={destination.place}
+                  initial={reduceMotion ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: reduceMotion ? 0 : 0.55, delay: reduceMotion ? 0 : 1.15 + index * 0.75 }}
+                >
                   <line
                     className="tour-map-leader"
                     x1={destination.x}
@@ -90,7 +105,7 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
                     {destination.place}
                   </text>
                   {destination.detail && <text className="tour-map-label-detail" x={destination.labelX + 14} y={destination.labelY + 60}>{destination.detail}</text>}
-                </g>
+                </motion.g>
               ))}
             </svg>
           </div>
