@@ -16,6 +16,15 @@ export function ExploreMore() {
 
   return (
     <section className="explore-more" aria-labelledby="explore-more-title">
+      <header className="explore-more-header">
+        <a className="explore-more-brand" href="#accueil">BRAIDSPLACE</a>
+        <nav className="explore-more-top-nav" aria-label="EPK navigation">
+          <a href="#accueil">HOME</a>
+          <a href="#artiste">THE ARTIST</a>
+          <a href="#parcours">AFRICA TOUR</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+      </header>
       <motion.h2
         className="explore-more-title"
         id="explore-more-title"

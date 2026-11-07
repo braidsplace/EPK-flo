@@ -40,6 +40,7 @@ export function ScrollStory() {
   const goToStage = (next: number) => {
     const section = sectionRef.current;
     if (!section || next < 0 || next > contactStage) return;
+    deepLinkPending.current = false;
     const travel = section.offsetHeight - window.innerHeight;
     if (travel <= 0) return;
     const top = section.offsetTop + (next + 0.5) / stageCount * travel;
@@ -63,6 +64,7 @@ export function ScrollStory() {
 
     // Trackpad momentum belongs to the same gesture: never queue another slide.
     const advance = (delta: number, event: WheelEvent | TouchEvent) => {
+      deepLinkPending.current = false;
       const rect = section.getBoundingClientRect();
       const travel = section.offsetHeight - window.innerHeight;
       if (travel <= 0 || rect.top > 1 || rect.bottom < window.innerHeight - 1) return;
@@ -120,12 +122,29 @@ export function ScrollStory() {
 
   useEffect(() => {
     if (!deepLinkPending.current) return;
-    const frame = requestAnimationFrame(() => {
+    const previousRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+    const alignDeepLink = () => {
+      if (!deepLinkPending.current) return;
+      const section = sectionRef.current;
+      if (!section) return;
+      const travel = section.offsetHeight - window.innerHeight;
+      const stage = stageFromHash();
+      window.scrollTo({ top: section.offsetTop + (stage + 0.5) / stageCount * travel, behavior: "instant" });
+      setActive(stage);
+    };
+    const frame = requestAnimationFrame(alignDeepLink);
+    const settle = window.setTimeout(() => {
+      alignDeepLink();
       deepLinkPending.current = false;
-      document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "auto", block: "start" });
-      setActive(stageFromHash());
-    });
-    return () => cancelAnimationFrame(frame);
+    }, 500);
+    window.addEventListener("pageshow", alignDeepLink);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.clearTimeout(settle);
+      window.removeEventListener("pageshow", alignDeepLink);
+      window.history.scrollRestoration = previousRestoration;
+    };
   }, []);
 
   return (
@@ -176,6 +195,11 @@ export function ScrollStory() {
             </motion.div>
           )}
         </AnimatePresence>
+        {active === tourStage || active === contactStage ? (
+          <button className="scroll-story-home" type="button" onClick={() => goToStage(0)}>
+            HOME
+          </button>
+        ) : null}
         <nav className="scroll-story-arrows" aria-label="Navigate the E-Press Kit">
           <button type="button" aria-label="Previous page" onClick={() => goToStage(active - 1)} disabled={active === 0}>←</button>
           <span aria-live="polite" aria-atomic="true">{active + 1} / {stageCount}</span>

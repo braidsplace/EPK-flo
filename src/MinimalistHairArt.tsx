@@ -34,6 +34,7 @@ export function MinimalistHairArt({ immersive = false, pinned = false }: { immer
       <div className="minimalist-hair-header">
         <a className="minimalist-hair-brand" href="#accueil">BRAIDSPLACE</a>
         <nav className="minimalist-hair-nav" aria-label="Explore the E-Press Kit">
+          <a href="#accueil">HOME</a>
           <a href="/?page=film">BACKSTAGE</a>
           <a href="/?page=statistiques">STATISTICS</a>
           <a href="/?page=portfolio">PORTFOLIO</a>
