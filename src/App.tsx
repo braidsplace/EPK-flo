@@ -7,7 +7,7 @@ import { PortfolioPage } from "./PortfolioPage";
 
 function AnnexHeader({ current }: { current: string }) {
   return <header className="annex-header shell"><a className="brand" href="/#annexes">BRAIDSPLACE</a><nav aria-label="Explore the E-Press Kit">
-    <a href="/#annexes">EXPLORE MORE</a>{annexLinks.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
+    <a href="/#accueil">HOME</a><a href="/#annexes">EXPLORE MORE</a>{annexLinks.filter((annex) => annex.label !== current).map((annex) => <a href={annex.href} key={annex.href}>{annex.label}</a>)}
   </nav></header>;
 }
 
