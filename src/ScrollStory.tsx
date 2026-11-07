@@ -7,7 +7,7 @@ import { ContactFinale } from "./ContactFinale";
 
 const messages = [
   <>Welcome to <em>Flow’s artistic world.</em></>,
-  <>Living <em>tableaux.</em></>,
+  <>Hair <em>in motion.</em></>,
   <>A desire to pay tribute and <em>break conventions.</em></>,
   <><em>Live Canvas</em>, a project by BRAIDSPLACE.</>,
 ];
