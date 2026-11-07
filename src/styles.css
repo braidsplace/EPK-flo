@@ -315,32 +315,35 @@ h2 span {
 .tour-route-line {
   fill: none;
   stroke: var(--clay);
-  stroke-width: 3.5;
+  stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.tour-map-leader {
+.tour-route-guide {
+  fill: none;
   stroke: var(--clay);
-  stroke-width: 1.5;
-  opacity: .7;
-}
-.tour-map-label-panel {
-  fill: #fffaf1;
-  stroke: rgba(58, 41, 31, .35);
-  stroke-width: 1;
-  fill-opacity: .62;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: .35;
 }
 .tour-map-label-place {
-  fill: var(--brown);
-  font: 400 18px var(--display);
-  font-variation-settings: "YEAR" 1979;
+  fill: #fffaf1;
+  font: 700 16px var(--body);
+  paint-order: stroke;
+  stroke: rgba(40, 24, 18, .9);
+  stroke-width: 3px;
+  stroke-linejoin: round;
 }
 .tour-map-origin-place {
-  font-size: 12px;
+  font-size: 14px;
 }
 .tour-map-label-detail {
-  fill: var(--brown);
-  font: 400 20px var(--editorial);
+  fill: #fffaf1;
+  font: 400 17px var(--editorial);
+  paint-order: stroke;
+  stroke: rgba(40, 24, 18, .9);
+  stroke-width: 3px;
+  stroke-linejoin: round;
 }
 .tour-map-halo {
   fill: #f8f2e9;
@@ -1577,10 +1580,6 @@ html:has(.scroll-story) {
 }
 .journey--immersive .tour-route-line {
   stroke: #4c3026;
-}
-.journey--immersive .tour-map-label-panel {
-  fill: #fffaf1;
-  fill-opacity: .92;
 }
 .journey--immersive .tour-stops {
   color: #fff5e0;
