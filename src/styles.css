@@ -1614,6 +1614,9 @@ html:has(.scroll-story) {
 }
 .journey--pinned .tour-heading h2 {
   font-size: clamp(28px, min(6vw, 7svh), 68px);
+  line-height: .91;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
 }
 .journey--pinned .tour-layout {
   min-height: 0;
