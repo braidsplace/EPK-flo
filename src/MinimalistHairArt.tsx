@@ -37,6 +37,7 @@ export function MinimalistHairArt({ immersive = false, pinned = false }: { immer
           <a href="/?page=film">BACKSTAGE</a>
           <a href="/?page=galerie">GALLERY</a>
           <a href="/?page=statistiques">STATISTICS</a>
+          <a href="/?page=portfolio">PORTFOLIO</a>
           <a href="#parcours">AFRICA TOUR</a>
         </nav>
       </div>

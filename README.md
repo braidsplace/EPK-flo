@@ -30,6 +30,8 @@ La section « Explore more » laisse désormais voir en fond la vidéo de couver
 
 ## Organisation
 
+La page `/?page=portfolio` reprend les six rubriques, les projets et les photographies du portfolio Squarespace de Flo, ainsi que les quatre images de la galerie de l'EPK. Les 68 images Squarespace sont copiées dans `public/portfolio/` pour éviter une dépendance au site Squarespace expiré ; `contenu/portfolio-sources.json` conserve leur provenance. Les crédits et droits de publication propres à ces nouveaux médias restent à confirmer avec Flo avant mise en ligne. Le lien PORTFOLIO apparaît dans le menu et sur la page Explore More. Le bouton Play/Pause du film de fond a été retiré à la demande de Flo ; la vidéo conserve sa tentative de lecture automatique et son image d'attente.
+
 - `index.html` : point d'entrée HTML et métadonnées.
 - `src/App.tsx` : accueil, navigation et pages annexes de l'EPK.
 - `src/ScrollStory.tsx` : phrases successives sur la vidéo fixe de couverture.

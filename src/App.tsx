@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { ScrollStory } from "./ScrollStory";
 import { annexLinks } from "./ExploreMore";
 import { StatisticsRunway } from "./StatisticsRunway";
+import { PortfolioPage } from "./PortfolioPage";
 
 function Reveal({ children, className = "" }: PropsWithChildren<{ className?: string }>) {
   const reduceMotion = useReducedMotion();
@@ -58,7 +59,7 @@ function AnnexHeader({ current }: { current: string }) {
   </nav></header>;
 }
 
-function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
+function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" | "portfolio" }) {
   const reduceMotion = useReducedMotion();
   const label = annexLinks.find((annex) => annex.page === page)?.label ?? "BACKSTAGE";
   return <motion.div className={page === "film" ? "annex-screen annex-screen--film" : "annex-screen"} initial={reduceMotion ? false : { opacity: 0, x: "-100vw" }} animate={{ opacity: 1, x: 0 }} transition={{ duration: reduceMotion ? 0 : 0.8, ease: [0.22, 1, 0.36, 1] }}>
@@ -71,6 +72,7 @@ function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
       </section>}
       {page === "galerie" && <><h1 className="sr-only">Gallery</h1><GalleryPage /></>}
       {page === "statistiques" && <><h1 className="sr-only">Statistics</h1><StatisticsRunway /></>}
+      {page === "portfolio" && <PortfolioPage />}
     </main>
     {page !== "film" && <footer className="site-footer shell"><a href="/#annexes">← Back to Explore More</a><p>BRAIDSPLACE · LIVE HAIR ART</p></footer>}
   </motion.div>;
@@ -78,16 +80,13 @@ function AnnexPage({ page }: { page: "film" | "galerie" | "statistiques" }) {
 
 function HomePage() {
   const backgroundVideoRef = useRef<HTMLVideoElement>(null);
-  const [backgroundVideoPlaying, setBackgroundVideoPlaying] = useState(false);
-  const [backgroundVideoError, setBackgroundVideoError] = useState(false);
-  const userPausedVideo = useRef(false);
   useEffect(() => {
     const video = backgroundVideoRef.current;
     if (!video) return;
     video.muted = true;
     video.defaultMuted = true;
     const start = () => {
-      if (!userPausedVideo.current && video.paused) {
+      if (video.paused) {
         void video.play().catch(() => {
           // Browsers may require a user gesture; the play control remains available.
         });
@@ -108,34 +107,21 @@ function HomePage() {
       window.removeEventListener("keydown", start);
     };
   }, []);
-  const toggleBackgroundVideo = () => {
-    const video = backgroundVideoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      userPausedVideo.current = false;
-      setBackgroundVideoError(false);
-      void video.play().catch(() => setBackgroundVideoError(true));
-    } else {
-      userPausedVideo.current = true;
-      video.pause();
-    }
-  };
   return <>
     <a className="skip-link" href="#artiste">Skip to content</a>
     <main id="contenu">
       <div className="home-immersive">
-        <div className="home-backdrop" aria-hidden="true"><video ref={backgroundVideoRef} src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay muted loop playsInline preload="auto" tabIndex={-1} onPlaying={() => { setBackgroundVideoPlaying(true); setBackgroundVideoError(false); }} onPause={() => setBackgroundVideoPlaying(false)} onError={() => setBackgroundVideoError(true)} /></div>
+        <div className="home-backdrop" aria-hidden="true"><video ref={backgroundVideoRef} src="/videos/braidsplace-cover.mp4" poster="/videos/braidsplace-cover-poster.jpg" autoPlay muted loop playsInline preload="auto" tabIndex={-1} /></div>
         <ScrollStory />
       </div>
     </main>
-    <button className="background-video-toggle" type="button" onClick={toggleBackgroundVideo} aria-label={backgroundVideoPlaying ? "Pause background video" : "Play background video"}>{backgroundVideoPlaying ? "Pause film" : backgroundVideoError ? "Retry film" : "Play film"}</button>
     <footer className="site-footer shell"><a className="brand" href="#accueil">BRAIDSPLACE</a><p>Live Hair Art · E-Press Kit</p><a href="#accueil">Back to top ↑</a></footer>
   </>;
 }
 
 function App() {
   const page = new URLSearchParams(window.location.search).get("page");
-  if (page === "film" || page === "galerie" || page === "statistiques") return <AnnexPage page={page} />;
+  if (page === "film" || page === "galerie" || page === "statistiques" || page === "portfolio") return <AnnexPage page={page} />;
   return <HomePage />;
 }
 
