@@ -1,17 +1,33 @@
 import { motion, useReducedMotion } from "motion/react";
 
-// Cape Town: UNGEGN/SAGNS; Johannesburg: Statistics South Africa;
-// Tanzania: Natural Earth country label point. Réunion: 20°53′ S, 55°31′ E
-// (Réunion Tourism). Projected onto africa-tour-map.svg.
+// Cape Town and Accra: UNGEGN (Accra: 5.52771° N, 0.20001° W).
+// Réunion: Réunion Tourism.
+// Zanzibar (Unguja, ~6.16° S, 39.20° E): marker offshore Tanzania,
+// Dar es Salaam: ~6°51′ S, 39°18′ E (Tanzania Ministry of Education).
+// Projected into the same Natural Earth map coordinates as the other stops.
 const origin = { place: "Réunion Island", x: 666.5, y: 565.5 } as const;
 
-const destinations = [
-  { place: "Cape Town", detail: "International Jazz Festival", x: 357.6, y: 679.7, labelX: 325, labelY: 716, anchor: "end" },
-  { place: "Johannesburg", detail: "", x: 437.2, y: 611.2, labelX: 458, labelY: 619, anchor: "start" },
-  { place: "Tanzania", detail: "", x: 494.3, y: 432.1, labelX: 518, labelY: 438, anchor: "start" },
-] as const;
+type TourStop = {
+  place: string;
+  detail: string;
+  date: string;
+  x: number;
+  y: number;
+  labelX: number;
+  labelY: number;
+  anchor: "start" | "end";
+  compact?: boolean;
+  leader?: { x: number; y: number };
+};
 
-const route = "M 666.5 565.5 C 620 585, 549 607, 500 625 C 443 651, 401 694, 357.6 679.7 C 388 671, 415 641, 437.2 611.2 C 466 566, 487 496, 494.3 432.1";
+const destinations: TourStop[] = [
+  { place: "Cape Town", detail: "International Jazz Festival", date: "March 2027", x: 357.6, y: 679.7, labelX: 325, labelY: 698, anchor: "end" },
+  { place: "Zanzibar", detail: "", date: "April 2027", x: 530.7, y: 435.5, labelX: 552, labelY: 397, anchor: "start", compact: true, leader: { x: 546, y: 409 } },
+  { place: "Dar es Salaam", detail: "", date: "April 2027", x: 531.5, y: 441.5, labelX: 552, labelY: 487, anchor: "start", compact: true, leader: { x: 546, y: 481 } },
+  { place: "Accra", detail: "", date: "May 2027", x: 202.5, y: 334.3, labelX: 180, labelY: 328, anchor: "end" },
+];
+
+const route = "M 666.5 565.5 C 620 585, 549 607, 500 625 C 443 651, 401 694, 357.6 679.7 C 425 650, 548 530, 530.7 435.5 L 531.5 441.5 C 440 355, 310 310, 202.5 334.3";
 
 export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
   const reduceMotion = useReducedMotion();
@@ -40,7 +56,7 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
             >
               <title id="tour-map-title">BRAIDSPLACE tour route across Africa</title>
               <desc id="tour-map-description">
-                A continuous route connects Réunion Island, Cape Town at the International Jazz Festival, Johannesburg and Tanzania on a map of Africa.
+                A continuous route connects Réunion Island, Cape Town in March 2027 at the International Jazz Festival, Zanzibar and Dar es Salaam in April 2027, then Accra in May 2027, on a map of Africa.
               </desc>
               <image href="/images/africa-tour-map-transparent.svg" width="700" height="760" />
               <path className="tour-route-guide" d={route} />
@@ -67,12 +83,14 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
                   animate={{ opacity: 1 }}
                   transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.75 + index * 0.6 }}
                 >
-                  <circle className="tour-map-halo" cx={destination.x} cy={destination.y} r="15" />
-                  <circle className="tour-map-dot" cx={destination.x} cy={destination.y} r="6" />
+                  {destination.leader && <line x1={destination.x} y1={destination.y} x2={destination.leader.x} y2={destination.leader.y} stroke="#fffaf1" strokeWidth="1.2" />}
+                  <circle className="tour-map-halo" cx={destination.x} cy={destination.y} r={destination.compact ? 4 : 15} />
+                  <circle className="tour-map-dot" cx={destination.x} cy={destination.y} r={destination.compact ? 1.5 : 6} />
                   <text className="tour-map-label-place" x={destination.labelX} y={destination.labelY} textAnchor={destination.anchor}>
                     {destination.place}
                   </text>
-                  {destination.detail && <text className="tour-map-label-detail" x={destination.labelX} y={destination.labelY + 22} textAnchor={destination.anchor}>{destination.detail}</text>}
+                  <text className="tour-map-label-detail" x={destination.labelX} y={destination.labelY + 22} textAnchor={destination.anchor}>{destination.date}</text>
+                  {destination.detail && <text className="tour-map-label-detail" x={destination.labelX} y={destination.labelY + 44} textAnchor={destination.anchor}>{destination.detail}</text>}
                 </motion.g>
               ))}
             </svg>
@@ -88,6 +106,7 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
                 <span className="tour-stop-mark" aria-hidden="true" />
                 <div>
                   <h3>{destination.place}</h3>
+                  <p>{destination.date}</p>
                   {destination.detail && <p>{destination.detail}</p>}
                 </div>
               </li>
