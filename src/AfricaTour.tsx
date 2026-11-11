@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "motion/react";
 
-// Cape Town: UNGEGN/SAGNS. Réunion: Réunion Tourism.
+// Cape Town and Accra: UNGEGN (Accra: 5.52771° N, 0.20001° W).
+// Réunion: Réunion Tourism.
 // Zanzibar (Unguja, ~6.16° S, 39.20° E): marker offshore Tanzania,
 // projected into the same Natural Earth map coordinates as the other stops.
 const origin = { place: "Réunion Island", x: 666.5, y: 565.5 } as const;
@@ -8,9 +9,10 @@ const origin = { place: "Réunion Island", x: 666.5, y: 565.5 } as const;
 const destinations = [
   { place: "Cape Town", detail: "International Jazz Festival", x: 357.6, y: 679.7, labelX: 325, labelY: 716, anchor: "end" },
   { place: "Zanzibar", detail: "", x: 530.7, y: 435.5, labelX: 552, labelY: 429, anchor: "start" },
+  { place: "Accra", detail: "May 2027", x: 202.5, y: 334.3, labelX: 180, labelY: 328, anchor: "end" },
 ] as const;
 
-const route = "M 666.5 565.5 C 620 585, 549 607, 500 625 C 443 651, 401 694, 357.6 679.7 C 425 650, 548 530, 530.7 435.5";
+const route = "M 666.5 565.5 C 620 585, 549 607, 500 625 C 443 651, 401 694, 357.6 679.7 C 425 650, 548 530, 530.7 435.5 C 440 355, 310 310, 202.5 334.3";
 
 export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
   const reduceMotion = useReducedMotion();
@@ -39,7 +41,7 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
             >
               <title id="tour-map-title">BRAIDSPLACE tour route across Africa</title>
               <desc id="tour-map-description">
-                A continuous route connects Réunion Island, Cape Town at the International Jazz Festival, then Zanzibar on a map of Africa.
+                A continuous route connects Réunion Island, Cape Town at the International Jazz Festival, then Zanzibar and Accra, planned for May 2027, on a map of Africa.
               </desc>
               <image href="/images/africa-tour-map-transparent.svg" width="700" height="760" />
               <path className="tour-route-guide" d={route} />
