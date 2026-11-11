@@ -74,7 +74,10 @@ export function AfricaTour({ pinned = false }: { pinned?: boolean }) {
               >
                 <circle className="tour-map-origin-ring" cx={origin.x} cy={origin.y} r="15" />
                 <circle className="tour-map-dot" cx={origin.x} cy={origin.y} r="6" />
-                <text className="tour-map-label-place tour-map-origin-place" x="645" y="540" textAnchor="end">{origin.place}</text>
+                <text className="tour-map-label-place tour-map-origin-place" x={origin.x} y="602" textAnchor="middle">
+                  <tspan x={origin.x}>Réunion</tspan>
+                  <tspan x={origin.x} dy="19">Island</tspan>
+                </text>
               </motion.g>
               {destinations.map((destination, index) => (
                 <motion.g
